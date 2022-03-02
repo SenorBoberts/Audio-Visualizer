@@ -12,7 +12,12 @@
   	</head>
   	<body>
 		<div id="wrapper"></div>
+		<select name="song" id="songSelect">
+			<option value="assets/skate.mp3">Skate - Silk Sonic</option>
+			<option value="assets/black.mp3">Everything Black - Unlike Pluto</option>
+		</select>
 		<button onclick='toggleSong()'>Toggle Sketch</button>
+		<button onclick='preload()'>Change Song</button>
 			<div id="sketch">
 				<script src="sketch.js"></script>
 			</div>
