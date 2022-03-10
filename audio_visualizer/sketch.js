@@ -6,6 +6,7 @@ let fft_lips;
 let song = null;
 let vocals = null;
 let toggle;
+let canvas;
 
 //funcs
 function preload(){
@@ -17,7 +18,8 @@ function preload(){
 }
 
 function setup(){
-	createCanvas(1024,512);
+	canvas = createCanvas(1024,512);
+	canvas.parent('sketch');
 	angleMode(DEGREES);
 	fft = new p5.FFT(0,128);
 }
