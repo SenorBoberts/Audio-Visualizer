@@ -4,7 +4,6 @@
 let fft;
 let fft_lips;
 let song = null;
-let vocals = null;
 let toggle;
 let canvas;
 
@@ -14,7 +13,6 @@ function preload(){
 		song.pause();
 	}
 	song = loadSound($("#songSelect").val());
-//	vocals = loadSound("assets/black_vocals.mp3");
 }
 
 function setup(){
@@ -41,24 +39,10 @@ function drawBars(){
 	noFill();		
 }
 
-function drawLips(amp){
-	beginShape();
-	vertex(width/4,height/2);
-	quadraticVertex(width/2, height/2 - amp, 3*width/4,height/2);
-	endShape();
-	beginShape();
-	vertex(width/4,height/2);
-	quadraticVertex(width/2, height/2 + amp, 3*width/4,height/2);
-	endShape();
-	noFill();
-}
-
 function toggleSong(){
 	if(song.isPlaying()){
 		song.pause();
-		//vocals.pause();
 	}else{
 		song.play();
-		//vocals.play();
 	}
 }
