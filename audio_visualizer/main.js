@@ -1,5 +1,5 @@
 import './style.css';
-import './sketch.js';
+import './sketch2.js';
 
 // Jquery
 $(document).ready(function(){

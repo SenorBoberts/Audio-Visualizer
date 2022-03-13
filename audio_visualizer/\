@@ -1,4 +1,5 @@
 // P5.js file
+// SKETCH 2
 
 //vars
 let fft;
@@ -19,7 +20,7 @@ function setup(){
 	canvas = createCanvas(1024,512);
 	canvas.parent('sketch');
 	angleMode(DEGREES);
-	fft = new p5.FFT(0,128);
+	fft = new p5.FFT(.8, 0, 64);
 }
 
 function draw(){
@@ -28,12 +29,16 @@ function draw(){
 }
 
 function drawBars(){
+	let width_bar = 6;
 	let spect = fft.analyze();
 	for(let i = 0; i < spect.length; i++){
 		let tall = spect[i];
 		let y = map(tall, 0, 256, height, 0);
-		rect(i*4, y, 4, height);
-		rect(1024-(i*4), y, 4, height);
+		if(y > height / 2){
+			rect(i*width_bar, y, width_bar, height);
+			rect(1024-(i*width_bar), y, width_bar, height);
+		}
+
 	}
 	stroke(255);
 	noFill();		
